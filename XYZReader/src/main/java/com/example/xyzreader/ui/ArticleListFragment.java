@@ -15,6 +15,7 @@ import android.app.Fragment;
 
 import android.app.LoaderManager;
 import android.support.annotation.IntegerRes;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -43,7 +44,7 @@ public class ArticleListFragment extends Fragment implements
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
-    private Toolbar mToolbar;
+    private CollapsingToolbarLayout mToolbar;
     public Context mContext;
     final String LOG_TAG = ArticleListFragment.class.getSimpleName();
     CoordinatorLayout cl;
@@ -92,7 +93,7 @@ public class ArticleListFragment extends Fragment implements
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View root = inflater.inflate(R.layout.fragment_article_list, container, false);
-        mToolbar = (Toolbar) root.findViewById(R.id.toolbar);
+        mToolbar = (CollapsingToolbarLayout) root.findViewById(R.id.toolbar);
         cl = (CoordinatorLayout) root.findViewById(R.id.coordinatelayout);
         mSwipeRefreshLayout = (SwipeRefreshLayout) root.findViewById(R.id.swipe_refresh_layout);
 
